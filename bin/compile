@@ -36,6 +36,4 @@ mkdir -p $BUILD_DIR
 mv $CACHE_DIR/$APP_DIR/* $BUILD_DIR/
 
 echo "       '$BUILD_DIR/$APP_DIR' is now the main application"
-
-ls -la $BUILD_DIR
 exit 0
