@@ -1,9 +1,12 @@
 #!/bin/sh
 
+ENV_DIR=$1
+
 # this pack is valid for apps with a hello.txt in the root
-if [ -d "$1" ]; then
-  echo "Project is located at $1"
-  ls -la
+APP_PATH = $ENV_DIR/APP_PATH
+
+if [ -d APP_PATH ]; then
+  echo "Project is located at $APP_PATH"
   exit 0
 else
   exit 1
