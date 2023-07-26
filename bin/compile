@@ -22,6 +22,7 @@ elif [ ! "$(ls -A $BUILD_DIR/$APP_DIR)" ]; then
   exit 1
 fi
 
+heroku --version
 # temporary move the contents of the $APP_DIR to the cache folder
 mkdir -p $CACHE_DIR/$APP_DIR
 mv $BUILD_DIR/$APP_DIR/* $CACHE_DIR/$APP_DIR
