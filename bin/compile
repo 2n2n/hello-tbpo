@@ -24,10 +24,18 @@ fi
 
 UUID=$(cat /proc/sys/kernel/random/uuid)
 
+# temporary move the contents of the $APP_DIR to the cache folder
+mkdir -p $CACHE_DIR/$APP_DIR
 mv $BUILD_DIR/$APP_DIR/* $CACHE_DIR/$APP_DIR
+
+# delete the current BUILD_DIR and recreate to have a clean state
 rm -rf $BUILD_DIR
+mkdir -p $BUILD_DIR
+
+#move the source file form cache to the build folder
 mv $CACHE_DIR/$APP_DIR/* $BUILD_DIR/
 
-echo "       '$APP_DIR' is now the main application"
+echo "       '$BUILD_DIR/$APP_DIR' is now the main application"
+
 ls -la $BUILD_DIR
 exit 0
