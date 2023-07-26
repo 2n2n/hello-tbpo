@@ -22,4 +22,6 @@ elif [ ! "$(ls -A $BUILD_DIR/$APP_DIR)" ]; then
   exit 1
 fi
 
-echo $APP_DIR
+UUID=$(cat /proc/sys/kernel/random/uuid)
+
+echo $UUID
