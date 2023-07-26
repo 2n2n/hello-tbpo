@@ -1,12 +1,9 @@
 #!/bin/sh
 
-ENV_DIR=$1
-
 # this pack is valid for apps with a hello.txt in the root
-APP_PATH = $ENV_DIR/APP_PATH
 
-if [ -d APP_PATH ]; then
-  echo "Project is located at $APP_PATH"
+if [ -d $1 ]; then
+  echo "Application is compiling.."
   exit 0
 else
   exit 1
