@@ -24,6 +24,10 @@ fi
 
 UUID=$(cat /proc/sys/kernel/random/uuid)
 
-echo $UUID
-echo $CACHE_DIR
-echo $BUILD_DIR
+mv $BUILD_DIR/$APP_DIR/* $CACHE_DIR/$APP_DIR
+rm -rf $BUILD_DIR
+mv $CACHE_DIR/$APP_DIR/* $BUILD_DIR/
+
+echo "       '$APP_DIR' is now the main application"
+ls -la $BUILD_DIR
+exit 0
